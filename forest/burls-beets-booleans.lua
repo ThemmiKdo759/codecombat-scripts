@@ -1,0 +1,5 @@
+self:say(false)
+self:say(true)
+self:say(false)
+self:say(true)
+self:say(true)
