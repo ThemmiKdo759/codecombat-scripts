@@ -1,3 +1,7 @@
+local function enemyInRange(enemy)
+    return hero:distanceTo(enemy) < 5
+end
+
 local function cleaveOrAttack(enemy)
     -- If "cleave" is ready, cleave; otherwise, attack.
     if hero:isReady("cleave") then
@@ -11,7 +15,7 @@ end
 
 while true do
     local e = hero:findNearest(hero:findEnemies())
-    if e and hero:distanceTo(e) < 5 then
+    if e and enemyInRange(e) then
         cleaveOrAttack(e)
     end
 end
