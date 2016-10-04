@@ -19,4 +19,5 @@ while true do
     if health(fs) > health(es) then
         hero:say("Attack")
     end
+    hero:wait(1)
 end
