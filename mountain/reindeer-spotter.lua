@@ -21,16 +21,13 @@ for i = 1, #friends do
     local reindeer = friends[i]
 
     -- Go through each position and see if it matches the reindeer's position.
-    local done = false
     for j = 1, #penPositions do
-        if not done then
-            local penPos = penPositions[j]
-            if penPos.x == reindeer.pos.x and penPos.y == reindeer.pos.y then
-                -- Put the reindeer's ID in the penOccupants array in slot penIndex.
-                penOccupants[j] = reindeer.id
-                -- break out of the inner loop here to avoid confusion.
-                done = true
-            end
+        local penPos = penPositions[j]
+        if penPos.x == reindeer.pos.x and penPos.y == reindeer.pos.y then
+            -- Put the reindeer's ID in the penOccupants array in slot penIndex.
+            penOccupants[j] = reindeer.id
+            -- break out of the inner loop here to avoid confusion.
+            break
         end
     end
 end
